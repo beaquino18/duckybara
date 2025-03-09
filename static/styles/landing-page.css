@@ -1,13 +1,95 @@
 @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 
 :root {
-  --navbar-clr: #DBE7DC;
-  --background-clr: #FFF5E4;
-  --header-clr: #487161;
-  --subheader-clr: #FFA725;
-  --list-clr: #C1D8C3;
+    --navbar-clr: #DBE7DC;
+    --background-clr: #FFF5E4;
+    --header-clr: #487161;
+    --subheader-clr: #FFA725;
+    --list-clr: #C1D8C3;
 }
 
 body {
-  background-color: var(--background-clr);
+    background-color: var(--background-clr);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.landing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.landing-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.landing-text {
+    flex: 1;
+    padding-right: 2rem;
+    max-width: 600px;
+}
+
+.landing-text h1 {
+    font-family: 'Yeseva One', cursive;
+    font-size: 3.5rem;
+    color: var(--header-clr);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.landing-text p {
+    color: #487161;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.get-started-btn {
+    background-color: var(--header-clr);
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-family: 'Yeseva One', cursive;
+    transition: background-color 0.3s;
+}
+
+.get-started-btn:hover {
+    background-color: #3a5c4f;
+}
+
+.landing-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .landing-content {
+        flex-direction: column;
+    }
+    
+    .landing-text {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .landing-text h1 {
+        font-size: 2.5rem;
+    }
 }
