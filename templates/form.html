@@ -4,56 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-        }
-        .flash-messages {
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-        }
-        .flash-success {
-            background-color: #dff0d8;
-            color: #3c763d;
-        }
-        .flash-error {
-            background-color: #f2dede;
-            color: #a94442;
-        }
-        .event-button {
-            margin-right: 5px;
-            margin-bottom: 10px;
-            background-color: #f0f0f0;
-            color: #333;
-        }
-        .event-button.selected {
-            background-color: #4CAF50;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/form.css') }}">
+    <script src="{{ url_for('static', filename='js/form.js') }}"></script>
 </head>
 <body>
     <h1>Contact Form</h1>
@@ -62,42 +14,38 @@
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
         </div>
+        
         <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
         </div>
+        
         <div class="form-group">
-            <label for="hobbies">Hobbies (separated by commas):</label>
-            <input type="text" id="hobbies" name="hobbies" required>
+            <label for="hobbies">Hobbies:</label>
+            <textarea id="hobbies" name="hobbies" rows="5" required></textarea>
         </div>
+
         <div class="form-group">
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="5" required></textarea>
         </div>
+
         <div class="form-group">
-            <label for="event_type">Event Type:</label>
-            <br>
+            <label for="event_type">Event Type:</label><br>
             <button type="button" class="event-button" value="Conference" onclick="toggleSelection(this)">Conference</button>
             <button type="button" class="event-button" value="Workshop" onclick="toggleSelection(this)">Workshop</button>
-            <button type="button" class="event-button" value="Meetup" onclick="toggleSelection(this)">Meetup</button>
+            <button type="button" class="event-button" value="Meetup" onclick="toggleSelection(this)">Meetup</button><br><br>
             <input type="hidden" id="event_type" name="event_type" required>
         </div>
-        <button type="submit">Find Activities</button>
+
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+        </div>
+        
+        <button type="submit">Submit</button>
     </form>
     <p><a href="/submissions">View Submissions</a></p>
 
-    <script>
-        function toggleSelection(button) {
-            // Remove selected class from all buttons
-            const buttons = document.querySelectorAll('.event-button');
-            buttons.forEach(btn => btn.classList.remove('selected'));
-            
-            // Add selected class to clicked button
-            button.classList.add('selected');
-            
-            // Set the value in the hidden input
-            document.getElementById('event_type').value = button.value;
-        }
-    </script>
 </body>
 </html>
