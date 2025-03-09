@@ -6,5 +6,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html', title='Home')
 
+# The route below is for building a form
+@app.route('/form')
+def form():
+    return render_template('form.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
