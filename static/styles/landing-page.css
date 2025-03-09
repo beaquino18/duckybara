@@ -1,0 +1,359 @@
+:root {
+  --font-primary: "Quicksand", serif;
+  --font-title: "Luckiest Guy", serif;
+  --font-cloud: "CloudFont", sans-serif;
+  --font-secondary: "Liter", serif;
+  --background-clr: rgb(106, 157, 215);
+}
+
+body {
+  background-color: var(--background-clr);
+  margin: 0;
+  padding: 0;
+}
+
+/* ALERT WHEN LOGGED OUT */
+
+.alert-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  z-index: 1000;
+  text-align: center;
+}
+
+
+.alert {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.alert-info {
+  background-color: #d9edf7;
+  color: #31708f;
+  border-color: #bce8f1;
+}
+
+
+
+.image-hero {
+  position: fixed;
+  width: 100%;
+  height: calc(100vh - 2rem);
+  overflow: hidden;
+  margin-top: 10rem;
+  z-index: 1;
+}
+
+#cloud-left {
+  position: absolute;
+  left: 0;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 50vw;
+  max-width: 800px;
+  height: auto;
+}
+
+#cloud-right {
+  position: absolute;
+  right: 0;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 50vw;
+  max-width: 800px;
+  height: auto;
+}
+
+.hero-text {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding-top: 1rem;
+  max-width: 80%;
+  margin: 0 auto;
+}
+.hero-hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: transparent;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+
+.nav-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-logo {
+  width: 6rem;
+  height: 100%;
+}
+
+#signup-logo {
+  width: 4.5rem;
+  height: 100%;
+  filter: brightness(0) invert(1);
+}
+
+#signup-logo:hover {
+  filter: invert(39%) sepia(29%) saturate(1012%) hue-rotate(118deg) brightness(94%) contrast(88%);
+  transition: filter 0.3s ease;
+}
+
+#app-name{
+  font-family: var(--font-title);
+  font-style: normal;
+  font-size: 11rem;
+  margin: 1rem 0;
+  line-height: 1;
+}
+
+#app-description{
+  font-family: var(--font-primary);
+  font-style: normal;
+  font-size: 1.5rem;
+  margin: 2rem auto;
+  max-width: 70%;
+  line-height: 1.5;
+}
+
+#get-started {
+  display: inline-block;
+  background-color: #f4e1c1;
+  color: #1c6d4d;
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#get-started:hover {
+  background-color: #1c6d4d;
+  color: #f4e1c1;
+  transform: scale(1.05);
+}
+
+
+.fluffy-cloud {
+  position: absolute;
+  width: 40rem;
+  height: auto;
+  opacity: 0.6;
+  animation: moveLeft 20s linear infinite;
+}
+
+.fluffy-cloud:nth-child(1) {
+  top: 0%;
+  animation-delay: 0s;
+}
+
+.fluffy-cloud:nth-child(2) {
+  top: 30%;
+  animation-delay: -5s;
+}
+
+.fluffy-cloud:nth-child(3) {
+  top: 50%;
+  animation-delay: -10s;
+}
+
+.fluffy-cloud:nth-child(4) {
+  top: 70%;
+  animation-delay: -15s;
+}
+
+@keyframes moveLeft {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -20%;
+  }
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+/* TITLE NAME */
+svg path {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 0.1;
+  stroke-dasharray: 35;
+  stroke-dashoffset: 35;
+  animation: textAnimation 3s ease-in-out 1 forwards;
+}
+
+@keyframes textAnimation {
+  0% {
+    stroke-dashoffset: 35;
+  }
+  80% {
+    fill: transparent;
+  }
+  100% {
+    fill: #fff;
+    stroke-dashoffset: 0;
+  }
+}
+
+
+/* ======================================== */
+
+.penguin-plane {
+  position: absolute;
+  width: 300px;
+  top: 50%;
+  right: -450px;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  transition: transform 0.3s ease-out;
+}
+
+
+/* LANDING PAGE INFO STYLING OR ABOUT US */
+
+.about-us {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--background-clr);
+
+}
+
+#info-section-header {
+  font-family: var(--font-primary);
+  font-size: 4.5rem;
+  margin: 1rem;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+#info-section-sub-header, .info-section-wrapper > * {
+  font-family: var(--font-primary);
+  font-style: normal;
+}
+
+#info-section-sub-header {
+  font-size: 2rem;
+  margin: 2rem 0;
+  padding: 1rem 0;
+  color: #333;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards 0.2s;
+}
+
+.info-section-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.info-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.info-point h4 {
+    font-size: 2.5vh;
+}
+
+
+.info-point:nth-child(1) { animation-delay: 0.4s; }
+.info-point:nth-child(2) { animation-delay: 0.6s; }
+.info-point:nth-child(3) { animation-delay: 0.8s; }
+.info-point:nth-child(4) { animation-delay: 1s; }
+
+.info-point:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.info-point h4 {
+  font-size: 1.25rem;
+  color: #333;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.plane-bullet-points-image {
+  width: 50px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.info-point:hover .plane-bullet-points-image {
+  transform: rotate(-10deg);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
