@@ -29,17 +29,17 @@ def profiles():
     
     
     friends = [
-        {'name': 'Sarah Johnson', 'image': 'friend1.jpg'},
+        {'name': 'Jennifer Park', 'image': 'friend1.jpg'},
         {'name': 'Michael Smith', 'image': 'friend2.jpg'},
-        {'name': 'Olivia Chen', 'image': 'friend3.jpg'},
+        {'name': 'Olivia Lee', 'image': 'friend3.jpg'},
         {'name': 'David Kim', 'image': 'friend4.jpg'},
         {'name': 'Jessica Patel', 'image': 'friend5.jpg'},
-        {'name': 'Alex Washington', 'image': 'friend6.jpg'},
-        {'name': 'Sophia Lee', 'image': 'friend7.jpg'},
+        {'name': 'Yani Tiangco', 'image': 'friend6.jpg'},
+        {'name': 'Emily Wong', 'image': 'friend7.jpg'},
         {'name': 'Aiden Nguyen', 'image': 'friend8.jpg'},
-        {'name': 'Emily Wong', 'image': 'friend9.jpg'},
+        {'name': 'Alex Washington', 'image': 'friend9.jpg'},
         {'name': 'Daniel Garcia', 'image': 'friend10.jpg'},
-        {'name': 'Mia Tanaka', 'image': 'friend11.jpg'},
+        {'name': 'Berndette Aquino', 'image': 'friend11.jpg'},
         {'name': 'Lucas Brown', 'image': 'friend12.jpg'},
         {'name': 'Zoe Campbell', 'image': 'friend13.jpg'},
         {'name': 'Noah Martinez', 'image': 'friend14.jpg'}
@@ -74,6 +74,15 @@ def profiles():
     ]
     
     return render_template('profile.html', user=user, friends=friends, events=events)
+
+@app.route('/socials')
+def socials():
+    user = {
+        'name': 'Emma Rodriguez',
+        'email': 'emma-rodriguez@example.com',
+        'location': 'Vancouver, BC, CA'
+    }
+    return render_template('socials.html', user=user)
 
 # The route below is for building a form
 # added methods to test submissions page

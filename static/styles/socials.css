@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Yeseva+One&display=swap');
+
+:root {
+    --font-primary: "Yeseva One", serif;
+    --navbar-clr: #DBE7DC;
+    --background-clr: #FFF5E4;
+    --header-clr: #487161;
+    --subheader-clr: #FFA725;
+    --list-clr: #C1D8C3;
+    --button-clr: #487161;
+    --card-bg: #ffffff;
+    --post-input-bg: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-clr);
+    min-height: 100vh;
+}
+
+/* Main content container */
+.socials-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Create Post Section */
+.create-post-section {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h3 {
+    color: var(--header-clr);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: var(--post-input-bg);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mood-selector {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.9rem;
+}
+
+.post-btn {
+    background-color: var(--button-clr);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.post-btn:hover {
+    background-color: #3a5c4e;
+}
+
+/* Posts Feed Section */
+.posts-feed-section {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.post-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--header-clr);
+    margin-right: 10px;
+    background-color: #f0f0f0;
+}
+
+.post-info {
+    flex: 1;
+}
+
+.post-author {
+    font-weight: bold;
+    color: var(--header-clr);
+}
+
+.post-time {
+    font-size: 0.8rem;
+    color: #666;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.post-mood {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    min-width: 80px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.happy {
+    background-color: #4CAF50;
+}
+
+.excited {
+    background-color: #FFA725;
+}
+
+.relaxed {
+    background-color: #4a6fa5;
+}
+
+.thoughtful {
+    background-color: #9c27b0;
+}
+
+.tired {
+    background-color: #607d8b;
+}
+
+.post-content {
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    font-size: 1rem;
+}
+
+.post-actions {
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: #666;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.action-btn:hover {
+    background-color: #eee;
+}
+
+.action-btn.active {
+    color: var(--header-clr);
+    font-weight: bold;
+}
+
+/* Animation for new posts */
+.user-post {
+    transition: background-color 0.5s ease;
+}
+
+.user-post.highlight {
+    background-color: #e6f3e6;
+}
+
+/* Custom scrollbar styling */
+.posts-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.posts-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.posts-container::-webkit-scrollbar-thumb {
+    background: #c1d8c3;
+    border-radius: 10px;
+}
+
+.posts-container::-webkit-scrollbar-thumb:hover {
+    background: #487161;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .socials-container {
+        padding: 0 10px;
+    }
+    
+    .post-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .post-avatar {
+        margin-bottom: 8px;
+    }
+    
+    .post-mood {
+        margin-top: 8px;
+        align-self: flex-start;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    
+    .mood-selector {
+        margin-bottom: 10px;
+    }
+}

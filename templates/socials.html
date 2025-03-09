@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Feed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/socials.css') }}">
+</head>
+<body>
+    <div>{% include 'navbar.html' %}</div>
+    
+    <div class="socials-container">
+        <!-- Create Post Section -->
+        <div class="create-post-section">
+            <h3>Share Your Feelings</h3>
+            <form id="post-form" class="post-form">
+                <div class="form-group">
+                    <textarea id="post-content" name="post-content" placeholder="What's on your mind, {{ user.name }}?" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <select id="post-mood" name="post-mood" class="mood-selector">
+                        <option value="happy">Happy</option>
+                        <option value="excited">Excited</option>
+                        <option value="relaxed">Relaxed</option>
+                        <option value="thoughtful">Thoughtful</option>
+                        <option value="tired">Tired</option>
+                    </select>
+                    <button type="submit" class="post-btn">Share Post</button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Posts Feed Section -->
+        <div class="posts-feed-section">
+            <h3>Friends' Updates</h3>
+            <div id="posts-container" class="posts-container">
+                <!-- User's posts will be added here dynamically -->
+                
+                <!-- Sample friend posts - these would likely come from a database in a real app -->
+                <div class="post-item">
+                    <div class="post-header">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah Johnson&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50" alt="Sarah Johnson" class="post-avatar">
+                        <div class="post-info">
+                            <div class="post-author">Sarah J.</div>
+                            <div class="post-time">2 hours ago</div>
+                        </div>
+                        <div class="post-mood happy">Happy</div>
+                    </div>
+                    <div class="post-content">
+                        Just finished a gorgeous hike at Lynn Canyon! The trails were perfect after yesterday's rain. Anyone want to join for the next one this weekend?
+                    </div>
+                    <div class="post-actions">
+                        <button class="action-btn like-btn">🌟 Like</button>
+                        <button class="action-btn comment-btn">💬 Comment</button>
+                    </div>
+                </div>
+                
+                <div class="post-item">
+                    <div class="post-header">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Michael Smith&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50" alt="Michael Smith" class="post-avatar">
+                        <div class="post-info">
+                            <div class="post-author">Michael S.</div>
+                            <div class="post-time">Yesterday</div>
+                        </div>
+                        <div class="post-mood thoughtful">Thoughtful</div>
+                    </div>
+                    <div class="post-content">
+                        The photography workshop at Emily Carr was eye-opening! Learned so many new techniques for capturing urban landscapes. Can't wait to try them out downtown this weekend.
+                    </div>
+                    <div class="post-actions">
+                        <button class="action-btn like-btn">🌟 Like</button>
+                        <button class="action-btn comment-btn">💬 Comment</button>
+                    </div>
+                </div>
+                
+                <div class="post-item">
+                    <div class="post-header">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Olivia Chen&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50" alt="Olivia Chen" class="post-avatar">
+                        <div class="post-info">
+                            <div class="post-author">Olivia C.</div>
+                            <div class="post-time">2 days ago</div>
+                        </div>
+                        <div class="post-mood excited">Excited</div>
+                    </div>
+                    <div class="post-content">
+                        Just signed up for the Vancouver Book Festival next month! Who else is going? I heard they'll have some amazing author panels this year!
+                    </div>
+                    <div class="post-actions">
+                        <button class="action-btn like-btn">🌟 Like</button>
+                        <button class="action-btn comment-btn">💬 Comment</button>
+                    </div>
+                </div>
+                
+                <div class="post-item">
+                    <div class="post-header">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=David Kim&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50" alt="David Kim" class="post-avatar">
+                        <div class="post-info">
+                            <div class="post-author">David K.</div>
+                            <div class="post-time">3 days ago</div>
+                        </div>
+                        <div class="post-mood relaxed">Relaxed</div>
+                    </div>
+                    <div class="post-content">
+                        Spent the afternoon at Kitsilano Beach with a good book. Perfect way to unwind after a busy week. The sunset was absolutely incredible!
+                    </div>
+                    <div class="post-actions">
+                        <button class="action-btn like-btn">🌟 Like</button>
+                        <button class="action-btn comment-btn">💬 Comment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/socials.js') }}"></script>
+</body>
+</html>
