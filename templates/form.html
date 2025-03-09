@@ -50,16 +50,6 @@
 <body>
     <h1>Contact Form</h1>
     
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <div class="flash-messages {% if 'successfully' in messages[0] %}flash-success{% else %}flash-error{% endif %}">
-          {% for message in messages %}
-            {{ message }}
-          {% endfor %}
-        </div>
-      {% endif %}
-    {% endwith %}
-    
     <form method="POST" action="/">
         <div class="form-group">
             <label for="name">Name:</label>
@@ -81,24 +71,19 @@
             <textarea id="message" name="message" rows="5" required></textarea>
         </div>
 
-        <div>
+        <div class="form-group">
             <label for="event_type">Event Type:</label>
-            <select id="event_type" name="event_type" required>
-                <option value="Conference">Conference</option>
-                <option value="Workshop">Workshop</option>
-                <option value="Meetup">Meetup</option>
-            </select><br><br>
-            <label for="hobby1">Hobby 1:</label>
-            <input type="text" id="hobby1" name="hobby1"><br><br>
-            <label for="hobby2">Hobby 2:</label>
-            <input type="text" id="hobby2" name="hobby2"><br><br>
-            <label for="hobby3">Hobby 3:</label>
-            <input type="text" id="hobby3" name="hobby3"><br><br>
-            <input type="submit" value="Submit">
+            <br>
+            <button type="button" class="event-button" value="Conference" onclick="toggleSelection(this)">Conference</button>
+            <button type="button" class="event-button" value="Workshop" onclick="toggleSelection(this)">Workshop</button>
+            <button type="button" class="event-button" value="Meetup" onclick="toggleSelection(this)">Meetup</button><br><br>
+            <input type="hidden" id="event_type" name="event_type" required>
+            <label for="hobbies">Hobbies (separated by commas):</label>
+            <input type="text" id="hobbies" name="hobbies" required><br><br>
+            <br><br>
+            
         </div>
         
-        
-        <button type="submit">Submit</button>
         <button type="submit">Find Activities</button>
     </form>
     
