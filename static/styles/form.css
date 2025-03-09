@@ -189,6 +189,9 @@ textarea {
   margin-top: 15px;
   margin-bottom: 0;
   transition: background-color 0.2s;
+  text-align: center;
+  display: block;
+  text-decoration: none;
 }
 
 .submit-btn:hover {
