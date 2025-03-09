@@ -13,7 +13,7 @@
         <!-- Left side - Profile information -->
         <div class="profile-info">
             <div class="profile-header">
-                <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile picture" class="profile-image">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Emma Rodriguez&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50&hair=long&hairColor=black&eyes=happy&mouth=smile" alt="Profile picture" class="profile-image">
                 <div class="profile-title">
                     <h1>{{ user.name }}</h1>
                     <h2>{{ user.location }}</h2>
@@ -49,38 +49,94 @@
             </div>
         </div>
         
+        <!-- Separate Events Attended Section -->
+        <div class="events-section">
+            <h3>Events Attended</h3>
+            <div class="events-list">
+                {% if user.events %}
+                    {% for event in user.events %}
+                    <div class="event-item">
+                        <div class="event-date">{{ event.date }}</div>
+                        <div class="event-details">
+                            <div class="event-name">{{ event.name }}</div>
+                            <div class="event-location">{{ event.location }}</div>
+                        </div>
+                        <div class="event-type {{ event.type|lower }}">{{ event.type }}</div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="event-item">
+                        <div class="event-date">May 12, 2025</div>
+                        <div class="event-details">
+                            <div class="event-name">Vancouver Outdoor Photography Meetup</div>
+                            <div class="event-location">Stanley Park</div>
+                        </div>
+                        <div class="event-type meetup">Meetup</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date">Apr 3, 2025</div>
+                        <div class="event-details">
+                            <div class="event-name">Hiking Club: Grouse Mountain</div>
+                            <div class="event-location">North Vancouver</div>
+                        </div>
+                        <div class="event-type meetup">Meetup</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date">Mar 18, 2025</div>
+                        <div class="event-details">
+                            <div class="event-name">Book Club: Monthly Discussion</div>
+                            <div class="event-location">Vancouver Public Library</div>
+                        </div>
+                        <div class="event-type workshop">Workshop</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date">Feb 27, 2025</div>
+                        <div class="event-details">
+                            <div class="event-name">Photography Workshop</div>
+                            <div class="event-location">Emily Carr University</div>
+                        </div>
+                        <div class="event-type workshop">Workshop</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date">Jan 15, 2025</div>
+                        <div class="event-details">
+                            <div class="event-name">Vancouver Nature Photography Exhibition</div>
+                            <div class="event-location">BC Art Gallery</div>
+                        </div>
+                        <div class="event-type conference">Conference</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date">Dec 5, 2024</div>
+                        <div class="event-details">
+                            <div class="event-name">Trail Hiking Social</div>
+                            <div class="event-location">Lynn Canyon Park</div>
+                        </div>
+                        <div class="event-type meetup">Meetup</div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        
         <!-- Right side - Friends section -->
         <div class="friends-section">
             <h3>My Friends</h3>
-            
             <div class="friends-grid">
                 {% for friend in friends %}
                 <div class="friend-card">
-                    <img src="{{ url_for('static', filename='images/friends/' + friend.image) }}" alt="{{ friend.name }}" class="friend-image">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed={{ friend.name }}&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50" alt="{{ friend.name }}" class="friend-image">
                     <div class="friend-name">{{ friend.name }}</div>
                 </div>
                 {% endfor %}
                 
-                <!-- Fallback if no friends data is available -->
                 {% if not friends %}
                 <div class="friend-card">
-                    <img src="{{ url_for('static', filename='images/friends/friend1.jpg') }}" alt="Friend 1" class="friend-image">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah Johnson&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50" alt="Sarah Johnson" class="friend-image">
                     <div class="friend-name">Sarah J.</div>
                 </div>
                 
                 <div class="friend-card">
-                    <img src="{{ url_for('static', filename='images/friends/friend2.jpg') }}" alt="Friend 2" class="friend-image">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Michael Smith&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50" alt="Michael Smith" class="friend-image">
                     <div class="friend-name">Michael S.</div>
-                </div>
-                
-                <div class="friend-card">
-                    <img src="{{ url_for('static', filename='images/friends/friend3.jpg') }}" alt="Friend 3" class="friend-image">
-                    <div class="friend-name">Emily D.</div>
-                </div>
-                
-                <div class="friend-card">
-                    <img src="{{ url_for('static', filename='images/friends/friend4.jpg') }}" alt="Friend 4" class="friend-image">
-                    <div class="friend-name">James W.</div>
                 </div>
                 {% endif %}
             </div>

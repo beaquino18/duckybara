@@ -30,34 +30,51 @@ body {
 .profile-container {
     width: 100%;
     max-width: 1200px;
+    height: calc(100vh - 120px); /* Ensure fixed height for the single page view */
     margin: 20px auto;
     padding: 0 20px;
-    display: flex;
-    gap: 25px;
-    min-height: calc(100vh - 120px);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
 }
 
 /* Profile section */
 .profile-info {
-    flex: 2;
+    grid-column: 1;
+    grid-row: 1;
     background-color: var(--card-bg);
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    max-height: 80vh;
+    max-height: 100%;
+    overflow: hidden;
 }
 
 /* Friends section */
 .friends-section {
-    flex: 1;
+    grid-column: 2;
+    grid-row: 1 / span 2;
     background-color: var(--card-bg);
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    max-height: 80vh;
+    height: 100%;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Events section */
+.events-section {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+    height: 100%;
 }
 
 /* Profile header with image and name */
@@ -76,6 +93,7 @@ body {
     object-fit: cover;
     border: 3px solid var(--header-clr);
     margin-right: 20px;
+    background-color: #f0f0f0;
 }
 
 .profile-title {
@@ -142,6 +160,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
+    overflow-y: auto;
 }
 
 .friend-card {
@@ -152,6 +171,13 @@ h3 {
     padding: 10px;
 }
 
+.friend-card:hover, 
+.event-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
 .friend-image {
     width: 50px;
     height: 50px;
@@ -159,12 +185,75 @@ h3 {
     object-fit: cover;
     border: 2px solid var(--header-clr);
     margin-right: 10px;
+    background-color: #f0f0f0;
 }
 
 .friend-name {
     font-family: 'Josefin Sans', sans-serif;
     color: var(--header-clr);
     font-weight: bold;
+}
+
+/* Events list styling */
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.event-item {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    padding: 12px;
+}
+
+.event-date {
+    min-width: 85px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #555;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.event-details {
+    flex: 1;
+}
+
+.event-name {
+    font-weight: bold;
+    color: var(--header-clr);
+    margin-bottom: 3px;
+}
+
+.event-location {
+    font-size: 0.85rem;
+    color: #666;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.event-type {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    min-width: 80px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.conference {
+    background-color: #4a6fa5;
+}
+
+.workshop {
+    background-color: #47a347;
+}
+
+.meetup {
+    background-color: #d97706;
 }
 
 /* Action buttons */
@@ -190,15 +279,54 @@ h3 {
     background-color: #3e8e41;
 }
 
+/* Custom scrollbar styling */
+.friends-section::-webkit-scrollbar,
+.events-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.friends-section::-webkit-scrollbar-track,
+.events-section::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.friends-section::-webkit-scrollbar-thumb,
+.events-section::-webkit-scrollbar-thumb {
+    background: #c1d8c3;
+    border-radius: 10px;
+}
+
+.friends-section::-webkit-scrollbar-thumb:hover,
+.events-section::-webkit-scrollbar-thumb:hover {
+    background: #487161;
+}
+
 /* Media queries */
 @media (max-width: 768px) {
     .profile-container {
-        flex-direction: column;
-        min-height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        height: auto;
     }
     
-    .profile-info, .friends-section {
-        max-height: none;
+    .profile-info {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .events-section {
+        grid-column: 1;
+        grid-row: 2;
+        max-height: 300px;
+        height: auto;
+    }
+    
+    .friends-section {
+        grid-column: 1;
+        grid-row: 3;
+        max-height: 300px;
+        height: auto;
     }
     
     .details-grid {
