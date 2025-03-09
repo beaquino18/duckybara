@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+import requests
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -20,7 +22,10 @@ def form():
     
     
 
+@app.route('/events')
+def events():
+    return render_template('events.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
-
-
