@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/profile.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/friend-search.css') }}">
 </head>
 <body>
     <div>{% include 'navbar.html' %}</div>
@@ -51,7 +52,7 @@
         
         <!-- Separate Events Attended Section -->
         <div class="events-section">
-            <h3>Events Attended</h3>
+            <h3>Events</h3>
             <div class="events-list">
                 {% if user.events %}
                     {% for event in user.events %}
@@ -68,7 +69,7 @@
                     <div class="event-item">
                         <div class="event-date">May 12, 2025</div>
                         <div class="event-details">
-                            <div class="event-name">Vancouver Outdoor Photography Meetup</div>
+                            <div class="event-name">Dine Out Vancouver</div>
                             <div class="event-location">Stanley Park</div>
                         </div>
                         <div class="event-type meetup">Meetup</div>
@@ -120,7 +121,15 @@
         <!-- Right side - Friends section -->
         <div class="friends-section">
             <h3>My Friends</h3>
-            <div class="friends-grid">
+            
+            <!-- Friend search bar -->
+            <div class="friend-search-container">
+                <input type="text" id="friendSearch" class="friend-search" placeholder="Search for friends..." autocomplete="off">
+                <button id="addFriendBtn" class="add-friend-btn">Add</button>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            
+            <div id="friendsGrid" class="friends-grid">
                 {% for friend in friends %}
                 <div class="friend-card">
                     <img src="https://api.dicebear.com/7.x/avataaars/svg?seed={{ friend.name }}&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50" alt="{{ friend.name }}" class="friend-image">
@@ -168,6 +177,9 @@
                 </div>
                 {% endif %}
             </div>
+            
+            <!-- JavaScript for friend search functionality -->
+            <script src="{{ url_for('static', filename='js/friend-search.js') }}"></script>
         </div>
     </div>
 </body>

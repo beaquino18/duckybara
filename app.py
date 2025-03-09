@@ -326,11 +326,11 @@ def profiles():
         {'name': 'Noah Martinez', 'image': 'friend14.jpg'}
     ]
     
-    # Example events data (optional - can be used if you want to pass real events)
+    
     events = [
         {
             'date': 'May 12, 2025',
-            'name': 'Vancouver Outdoor Photography Meetup',
+            'name': 'Dine Out Vancouver',
             'location': 'Stanley Park',
             'type': 'Meetup'
         },
