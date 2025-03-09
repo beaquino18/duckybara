@@ -31,6 +31,24 @@ function initializeTooltips() {
 * Setup any additional hover effects not handled by CSS
 */
 function setupHoverEffects() {
+  // Get all activity cards
+  const activityCards = document.querySelectorAll('.activity-card');
+  
+  // Add explicit mouseenter/mouseleave handlers for each card
+  activityCards.forEach(card => {
+      const description = card.querySelector('.activity-description');
+      
+      // When mouse enters the card
+      card.addEventListener('mouseenter', function() {
+          description.style.opacity = '1';
+      });
+      
+      // When mouse leaves the card
+      card.addEventListener('mouseleave', function() {
+          description.style.opacity = '0';
+      });
+  });
+  
   // Ensure the join button doesn't trigger the description overlay
   const joinButtons = document.querySelectorAll('.join-btn');
   
@@ -42,9 +60,6 @@ function setupHoverEffects() {
           // Find the parent card and make sure the description stays hidden
           const card = button.closest('.activity-card');
           const description = card.querySelector('.activity-description');
-          
-          // Save the original opacity to restore later
-          description.dataset.originalOpacity = description.style.opacity;
           description.style.opacity = '0';
       });
       
@@ -57,9 +72,8 @@ function setupHoverEffects() {
           const description = card.querySelector('.activity-description');
           
           // Only restore the opacity if the mouse is still over the card
-          // This check prevents flicker when moving from button to card
-          if (card.matches(':hover')) {
-              description.style.opacity = description.dataset.originalOpacity || '1';
+          if (card.matches(':hover') && !button.matches(':hover')) {
+              description.style.opacity = '1';
           }
       });
   });

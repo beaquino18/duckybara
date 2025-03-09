@@ -173,10 +173,6 @@ body {
     z-index: 2;
 }
 
-.activity-card:hover .activity-description {
-    opacity: 1;
-}
-
 .activity-description p {
     font-family: var(--font-secondary);
     text-align: center;

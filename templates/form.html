@@ -15,25 +15,24 @@
         <h2>and we'll match you with activities</h2>
         
         <form method="POST" action="/">
-            <div class="form-row">
+            <div class="form-grid">
+                <!-- Left Column -->
                 <div class="form-column">
                     <div class="form-group">
                         <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" class="single-line-input" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                </div>
-                
-                <div class="form-column">
-                    <div class="form-group">
-                        <label for="location">Location:</label>
-                        <input type="text" id="location" name="location" required>
+                        <input type="email" id="email" name="email" class="single-line-input" required>
                     </div>
                     
+                    <div class="form-group">
+                        <label for="location">Location:</label>
+                        <input type="text" id="location" name="location" class="single-line-input" required>
+                    </div>
+
                     <div class="form-group">
                         <label for="age">Age Range:</label>
                         <select id="age" name="age" required>
@@ -45,34 +44,34 @@
                         </select>
                     </div>
                 </div>
-            </div>
-            
-            <div class="form-group">
-                <label for="hobbies">Hobbies:</label>
-                <textarea id="hobbies" name="hobbies" rows="3" required></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="3" required></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label for="event_type">Event Type:</label>
-                <div class="event-buttons">
-                    <button type="button" class="event-button" value="Conference" onclick="toggleSelection(this)">Conference</button>
-                    <button type="button" class="event-button" value="Workshop" onclick="toggleSelection(this)">Workshop</button>
-                    <button type="button" class="event-button" value="Meetup" onclick="toggleSelection(this)">Meetup</button>
+                
+                <!-- Right Column -->
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="hobbies">Hobbies:</label>
+                        <textarea id="hobbies" name="hobbies" rows="2" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="2" required></textarea>
+                    </div>
+                    
+                    <div class="form-group event-type-group">
+                        <label for="event_type">Event Type:</label>
+                        <div class="event-buttons">
+                            <button type="button" class="event-button" value="Conference" onclick="toggleSelection(this)">Conference</button>
+                            <button type="button" class="event-button" value="Workshop" onclick="toggleSelection(this)">Workshop</button>
+                            <button type="button" class="event-button" value="Meetup" onclick="toggleSelection(this)">Meetup</button>
+                        </div>
+                        <input type="hidden" id="event_type" name="event_type" required>
+                    </div>
                 </div>
-                <input type="hidden" id="event_type" name="event_type" required>
             </div>
             
             <button type="submit" class="submit-btn">Submit</button>
         </form>
         
-        <div class="links">
-            <a href="/progress">View Submissions</a>
-        </div>
     </div>
 </body>
 </html>
