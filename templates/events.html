@@ -16,6 +16,7 @@
 <div class="event-card">
     <div class="event-overlay">
         <h3>Social & Personal</h3>
+        <a href="{{ url_for('activity', category='Social & Personal') }}" class="view-activities">View Activities</a>
     </div>
     <img src="../static/images/images-used/event-1.png" alt="Social Event" class="event-image">
 </div>
@@ -23,6 +24,7 @@
 <div class="event-card">
     <div class="event-overlay">
         <h3>Technology & Innovation</h3>
+        <a href="{{ url_for('activity', category='Technology & Innovation') }}" class="view-activities">View Activities</a>
     </div>
     <img src="../static/images/images-used/event-2.png" alt="Virtual Event" class="event-image">
 </div>
@@ -30,6 +32,7 @@
 <div class="event-card">
     <div class="event-overlay">
         <h3>Food & Beverage</h3>
+        <a href="{{ url_for('activity', category='Food & Beverage') }}" class="view-activities">View Activities</a>
     </div>
     <img src="../static/images/images-used/event-3.png" alt="Food Event" class="event-image">
 </div>
@@ -37,6 +40,7 @@
 <div class="event-card">
     <div class="event-overlay">
         <h3>Arts & Craft</h3>
+        <a href="{{ url_for('activity', category='Arts & Craft') }}" class="view-activities">View Activities</a>
     </div>
     <img src="../static/images/images-used/event-4.png" alt="Outdoor Event" class="event-image">
 </div>
@@ -44,6 +48,7 @@
 <div class="event-card">
     <div class="event-overlay">
         <h3>Community & Culture</h3>
+        <a href="{{ url_for('activity', category='Community & Culture') }}" class="view-activities">View Activities</a>
     </div>
     <img src="../static/images/images-used/event-5.png" alt="Entertainment Event" class="event-image">
 </div>
@@ -51,10 +56,16 @@
 <div class="event-card">
     <div class="event-overlay">
         <h3>Corporate & Business</h3>
+        <a href="{{ url_for('activity', category='Corporate & Business') }}" class="view-activities">View Activities</a>
     </div>
     <img src="../static/images/images-used/event-6.png" alt="Workshop Event" class="event-image">
 </div>
 </div>
 </main>
+
+<script>
+  // Set navbar to updated state when viewing events page
+  localStorage.setItem('navbarUpdated', 'true');
+</script>
 </body>
 </html>

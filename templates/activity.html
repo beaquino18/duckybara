@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category }} Activities</title>
+    <link rel="stylesheet" href="../static/styles/activity.css">
+</head>
+<body>
+    <div>{% include 'navbar.html' %}</div>
+    
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        <h1 class="page-title">{{ category }} Activities</h1>
+        
+        <!-- Activities Grid -->
+        <div class="activities-grid">
+            {% for activity in activities %}
+            <div class="activity-card">
+                <div class="activity-content">
+                    <h3 class="activity-title">{{ activity.title }}</h3>
+                    
+                    <div class="activity-friends">
+                        <span class="friends-label">Friends going:</span>
+                        <div class="friends-avatars">
+                            {% for friend in activity.friends %}
+                                <div class="friend-avatar" title="{{ friend }}">
+                                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed={{ friend }}&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50" alt="{{ friend }}">
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <a href="{{ activity.url }}" class="join-btn" target="_blank">Join</a>
+                </div>
+                
+                <div class="activity-description">
+                    <p>{{ activity.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    
+    <script src="{{ url_for('static', filename='js/activity.js') }}"></script>
+</body>
+</html>
