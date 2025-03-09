@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Yeseva+One&display=swap');
 
 :root {
     --navbar-clr: #DBE7DC;
@@ -6,6 +6,8 @@
     --header-clr: #487161;
     --subheader-clr: #FFA725;
     --list-clr: #C1D8C3;
+    --font-primary: "Yeseva One", serif;
+    --font-sub: "Josefin Sans", sans-serif;
 }
 
 body {
@@ -32,6 +34,7 @@ body {
     flex: 1;
     padding-right: 2rem;
     max-width: 600px;
+    font-family: var(--font-sub);
 }
 
 .landing-text h1 {

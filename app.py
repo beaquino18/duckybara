@@ -10,6 +10,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html', title='Home')
 
+@app.route('/events')
+def events():
+    return render_template('events.html')
+
 # The route below is for building a form
 # added methods to test submissions page
 @app.route('/form', methods=['GET', 'POST'])

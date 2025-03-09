@@ -1,0 +1,72 @@
+/* Events Page Styles */
+:root {
+  --navbar-clr: #DBE7DC;
+  --background-clr: #FFF5E4;
+  --header-clr: #487161;
+  --subheader-clr: #FFA725;
+  --list-clr: #C1D8C3;
+  --font-primary: "Yeseva One", serif;
+}
+
+body {
+  background-color: var(--background-clr);
+  font-family: var(--font-primary);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-title {
+  text-align: center;
+  color: var(--header-clr);
+  font-size: 2.5rem;
+  margin: 40px 0;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.event-card {
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .events-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .events-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .page-title {
+      font-size: 2rem;
+  }
+}

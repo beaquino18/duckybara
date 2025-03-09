@@ -27,7 +27,9 @@
             <div class="landing-text">
                 <h1>Find Activities<br>Near You!</h1>
                 <p>You may feel like the area that you live in has nothing to do because you already tried many activities. But, you'd be surprised how easy it is to find new experiences near you. Just input your hobbies and let us recommend exciting activities that match your interests. Go try them out now!!</p>
-                <button class="get-started-btn">Get Started!</button>
+                <a href="{{ url_for('events') }}" class="get-started-link">
+                  <button class="get-started-btn">Get Started!</button>
+                </a>
             </div>
             <div class="landing-image">
                 <img src="../static/images/images-used/landing-page-image.png" alt="Chat bubbles illustration">
