@@ -37,7 +37,7 @@ def form():
     print(f"Event Type: {event_type}, Hobbies: {hobbies}")
     return 'Form submitted successfully'
 
-    #add me
+    #test
     
 
 if __name__ == '__main__':
