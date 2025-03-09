@@ -1,123 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Yeseva+One&display=swap');
+
 /* Events Page Styles */
 :root {
-  --navbar-clr: #DBE7DC;
-  --background-clr: #FFF5E4;
-  --header-clr: #487161;
-  --subheader-clr: #FFA725;
-  --list-clr: #C1D8C3;
-  --font-primary: "Yeseva One", serif;
+    --navbar-clr: #DBE7DC;
+    --background-clr: #FFF5E4;
+    --header-clr: #487161;
+    --subheader-clr: #FFA725;
+    --list-clr: #C1D8C3;
+    --font-primary: "Yeseva One", serif;
   }
   
-  /* Sticky Navbar */
-  nav.navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
   
   body {
-  background-color: var(--background-clr);
-  font-family: var(--font-primary);
-  margin: 0;
-  padding: 0;
+    background-color: var(--background-clr);
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
   
   .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1;
   }
   
   .page-title {
-  text-align: center;
-  color: var(--header-clr);
-  font-size: 2.5rem;
-  margin: 40px 0;
+    text-align: center;
+    color: var(--header-clr);
+    font-size: 2.5rem;
+    margin: 30px 0;
   }
   
   .events-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 30px;
   }
   
   .event-card {
-  aspect-ratio: 1/1;
-  border-radius: 5px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  position: relative;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 200px; /* Control the height */
   }
   
   .event-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
   }
   
   .event-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block; /* Ensures no extra space */
   }
   
   .event-card:hover .event-image {
-  transform: scale(1.1);
+    transform: scale(1.05);
   }
   
-  /* Overlay styles */
+  /* Overlay styles - fixed to match image dimensions exactly */
   .event-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(72, 113, 97, 0.8); /* Header color with opacity */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(72, 113, 97, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
   }
   
   .event-card:hover .event-overlay {
-  opacity: 1;
+    opacity: 1;
   }
   
   .event-overlay h3 {
-  color: white;
-  text-align: center;
-  padding: 10px;
-  font-size: 1.5rem;
-  transform: translateY(20px);
-  transition: transform 0.3s ease;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.4rem;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    margin: 0; /* Remove default margins */
   }
   
   .event-card:hover .event-overlay h3 {
-  transform: translateY(0);
+    transform: translateY(0);
   }
   
   /* Responsive adjustments */
   @media (max-width: 900px) {
-  .events-grid {
-  grid-template-columns: repeat(2, 1fr);
-   }
+    .events-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .event-card {
+      height: 180px;
+    }
   }
   
   @media (max-width: 600px) {
-  .events-grid {
-  grid-template-columns: 1fr;
-   }
-   
-  .page-title {
-  font-size: 2rem;
-   }
-   
-  .event-overlay h3 {
+    .events-grid {
+      grid-template-columns: 1fr;
+      max-width: 300px;
+    }
+    
+    .page-title {
+      font-size: 2rem;
+      margin: 20px 0;
+    }
+    
+    .event-overlay h3 {
       font-size: 1.2rem;
-  }
+    }
+    
+    .event-card {
+      height: 220px;
+    }
   }
