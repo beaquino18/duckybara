@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 
-body {
-font-family: Arial, sans-serif;
-font-family: "Yeseva One", serif;
-font-weight: 400;
-font-style: normal;
-max-width: 600px;
-margin: 0 auto;
-padding: 20px;
+:root {
+    --font-primary:"Yeseva One", serif;
 }
+
+body {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-style: normal;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #cccaca;
+}
+
 
 /**
 CSS styling for the main text
@@ -18,7 +22,7 @@ h1 {
     text-align: center;
 }
 
-h1 {
+h2 {
     color: #FFA725;
     text-align: center;
 }
