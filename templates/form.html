@@ -8,7 +8,9 @@
 <script src="{{ url_for('static', filename='js/form.js') }}"></script>
 </head>
 <body>
-<h1>Contact Form</h1>
+<div>{% include 'navbar.html' %}</div>
+<h1>Tell us about you...</h1>
+<h2>and we’ll match you with activities</h2>
 <form method="POST" action="/">
 <div class="form-group">
 <label for="name">Name:</label>
@@ -47,8 +49,12 @@
 <button type="button" class="event-button" value="Meetup" onclick="toggleSelection(this)">Meetup</button><br><br>
 <input type="hidden" id="event_type" name="event_type" required>
 </div>
+<!-- 
+The code snippet below contains a form with a submit button. 
+Please change the link of the submit button to redirect to a new page.
+-->
 <button type="submit">Submit</button>
 </form>
-<p><a href="/submissions">View Submissions</a></p>
+<p><a href="/progress">View Submissions</a></p>
 </body>
 </html>
