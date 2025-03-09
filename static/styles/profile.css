@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Yeseva+One&display=swap');
+
+:root {
+    --font-primary: "Yeseva One", serif;
+    --navbar-clr: #DBE7DC;
+    --background-clr: #f5f5f5;
+    --header-clr: #487161;
+    --subheader-clr: #FFA725;
+    --button-clr: #4CAF50;
+    --card-bg: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-clr);
+    min-height: 100vh;
+}
+
+/* Main content container */
+.profile-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 25px;
+    min-height: calc(100vh - 120px);
+}
+
+/* Profile section */
+.profile-info {
+    flex: 2;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+}
+
+/* Friends section */
+.friends-section {
+    flex: 1;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Profile header with image and name */
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--header-clr);
+    margin-right: 20px;
+}
+
+.profile-title {
+    flex: 1;
+}
+
+/* Header styling */
+h1 {
+    color: var(--header-clr);
+    margin-bottom: 5px;
+    font-size: 1.8rem;
+}
+
+h2 {
+    color: var(--subheader-clr);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: var(--header-clr);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+/* Profile details grid */
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+/* Profile details */
+.profile-details {
+    flex: 1;
+}
+
+.detail-item {
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    padding: 10px 15px;
+}
+
+.detail-label {
+    color: var(--header-clr);
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: block;
+}
+
+.detail-value {
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 5px 0;
+    font-size: 1rem;
+}
+
+/* Friends grid */
+.friends-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.friend-card {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.friend-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--header-clr);
+    margin-right: 10px;
+}
+
+.friend-name {
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--header-clr);
+    font-weight: bold;
+}
+
+/* Action buttons */
+.profile-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.profile-btn {
+    background-color: var(--button-clr);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.profile-btn:hover {
+    background-color: #3e8e41;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .profile-info, .friends-section {
+        max-height: none;
+    }
+    
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .full-width {
+        grid-column: 1;
+    }
+    
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-image {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .profile-actions {
+        justify-content: center;
+    }
+}

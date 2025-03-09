@@ -14,6 +14,26 @@ def index():
 def events():
     return render_template('events.html')
 
+@app.route('/profile')
+def profiles():
+    user = {
+        'name': 'John Doe',
+        'email': 'john@example.com',
+        'location': 'New York, NY',
+        'age': '27-30',
+        'hobbies': 'Hiking, Photography, Reading',
+        'event_type': 'Meetup'
+    }
+    
+    # Example friends data - replace with actual friends data
+    friends = [
+        {'name': 'Sarah Johnson', 'image': 'friend1.jpg'},
+        {'name': 'Michael Smith', 'image': 'friend2.jpg'},
+        # More friends...
+    ]
+    
+    return render_template('profile.html', user=user, friends=friends)
+
 # The route below is for building a form
 # added methods to test submissions page
 @app.route('/form', methods=['GET', 'POST'])
