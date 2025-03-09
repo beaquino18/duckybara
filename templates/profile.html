@@ -13,7 +13,7 @@
         <!-- Left side - Profile information -->
         <div class="profile-info">
             <div class="profile-header">
-                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Emma Rodriguez&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50&hair=long&hairColor=black&eyes=happy&mouth=smile" alt="Profile picture" class="profile-image">
+              <img src="https://api.dicebear.com/7.x/personas/svg?seed=Emma%20Rodriguez&radius=50" alt="Profile picture" class="profile-image">
                 <div class="profile-title">
                     <h1>{{ user.name }}</h1>
                     <h2>{{ user.location }}</h2>
@@ -117,30 +117,50 @@
             </div>
         </div>
         
-        <!-- Right side - Friends section -->
-        <div class="friends-section">
-            <h3>My Friends</h3>
-            <div class="friends-grid">
-                {% for friend in friends %}
-                <div class="friend-card">
-                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed={{ friend.name }}&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50" alt="{{ friend.name }}" class="friend-image">
+
+    <!-- Right side - Friends section -->
+    <div class="friends-section">
+        <h3>My Friends</h3>
+        <div class="friends-grid">
+            {% for friend in friends %}
+            <div class="friend-card">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed={{ friend.name }}&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50" alt="{{ friend.name }}" class="friend-image">
+                <div class="friend-info">
                     <div class="friend-name">{{ friend.name }}</div>
+                    <div class="friend-events">
+                        <span class="event-indicator conference"></span>
+                        <span class="event-indicator workshop"></span>
+                        <span class="event-indicator meetup"></span>
+                    </div>
                 </div>
-                {% endfor %}
-                
-                {% if not friends %}
-                <div class="friend-card">
-                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah Johnson&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50" alt="Sarah Johnson" class="friend-image">
-                    <div class="friend-name">Sarah J.</div>
-                </div>
-                
-                <div class="friend-card">
-                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Michael Smith&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50" alt="Michael Smith" class="friend-image">
-                    <div class="friend-name">Michael S.</div>
-                </div>
-                {% endif %}
             </div>
+            {% endfor %}
+            
+            {% if not friends %}
+            <div class="friend-card">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah Johnson&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50" alt="Sarah Johnson" class="friend-image">
+                <div class="friend-info">
+                    <div class="friend-name">Sarah J.</div>
+                    <div class="friend-events">
+                        <span class="event-indicator conference"></span>
+                        <span class="event-indicator workshop"></span>
+                        <span class="event-indicator meetup"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="friend-card">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Michael Smith&backgroundColor=b6e3f4,c0aede,d1d4f9&radius=50" alt="Michael Smith" class="friend-image">
+                <div class="friend-info">
+                    <div class="friend-name">Michael S.</div>
+                    <div class="friend-events">
+                        <span class="event-indicator meetup"></span>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
         </div>
+    </div>
     </div>
 </body>
 </html>

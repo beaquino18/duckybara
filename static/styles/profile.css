@@ -165,7 +165,7 @@ h3 {
 
 .friend-card {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     background-color: #f9f9f9;
     border-radius: 6px;
     padding: 10px;
@@ -188,10 +188,42 @@ h3 {
     background-color: #f0f0f0;
 }
 
+.friend-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .friend-name {
     font-family: 'Josefin Sans', sans-serif;
     color: var(--header-clr);
     font-weight: bold;
+}
+
+.friend-events {
+    display: flex;
+    gap: 5px;
+    margin-top: 4px;
+}
+
+.event-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+/* Using the same colors as in the events section */
+.event-indicator.conference {
+    background-color: #4a6fa5;
+}
+
+.event-indicator.workshop {
+    background-color: #47a347;
+}
+
+.event-indicator.meetup {
+    background-color: #d97706;
 }
 
 /* Events list styling */
