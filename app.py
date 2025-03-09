@@ -39,16 +39,6 @@ def form():
 
     #add me
     
-=========
-@app.route('/profile')
-def profile():
-    return render_template('profile.html')
->>>>>>>>> Temporary merge branch 2
-
-@app.route('/events')
-def events():
-    return render_template('events.html')
-
 
 if __name__ == '__main__':
     app.run(debug=True)
