@@ -36,7 +36,13 @@ def profiles():
         {'name': 'Jessica Patel', 'image': 'friend5.jpg'},
         {'name': 'Alex Washington', 'image': 'friend6.jpg'},
         {'name': 'Sophia Lee', 'image': 'friend7.jpg'},
-        {'name': 'Aiden Nguyen', 'image': 'friend8.jpg'}
+        {'name': 'Aiden Nguyen', 'image': 'friend8.jpg'},
+        {'name': 'Emily Wong', 'image': 'friend9.jpg'},
+        {'name': 'Daniel Garcia', 'image': 'friend10.jpg'},
+        {'name': 'Mia Tanaka', 'image': 'friend11.jpg'},
+        {'name': 'Lucas Brown', 'image': 'friend12.jpg'},
+        {'name': 'Zoe Campbell', 'image': 'friend13.jpg'},
+        {'name': 'Noah Martinez', 'image': 'friend14.jpg'}
     ]
     
     # Example events data (optional - can be used if you want to pass real events)

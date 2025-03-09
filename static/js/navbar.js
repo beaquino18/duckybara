@@ -45,8 +45,30 @@ function updateNavbar() {
           navLinksContainer.appendChild(listItem);
       });
       
-      // Add the navigation links to nav-right
+      // Create logout icon
+      const logoutItem = document.createElement('li');
+      logoutItem.className = 'logout-item';
+      const logoutLink = document.createElement('a');
+      logoutLink.href = '/';
+      logoutLink.title = 'Logout';
+      logoutLink.className = 'logout-link';
+      
+      // Create the logout icon
+      const logoutIcon = document.createElement('span');
+      logoutIcon.innerHTML = '⇥'; // Unicode exit/logout symbol
+      logoutIcon.className = 'logout-icon';
+      
+      // Add click event to also clear localStorage
+      logoutLink.addEventListener('click', function() {
+          localStorage.removeItem('navbarUpdated');
+      });
+      
+      logoutLink.appendChild(logoutIcon);
+      logoutItem.appendChild(logoutLink);
+      
+      // Add the navigation links and logout to nav-right
       navRight.appendChild(navLinksContainer);
+      navLinksContainer.appendChild(logoutItem);
   }
 }
 
