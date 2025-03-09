@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navbar</title>
   <link rel="stylesheet" href="../static/styles/navbar.css">
+  <script src="{{url_for('static', filename='js/navbar.js') }}"></script>
 </head>
 <body>
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-left">
-      <a href="#"><img src="../static/images/images-used/what-now-logo.png" id="company-logo"></a>
+      <a href="/"><img src="../static/images/images-used/what-now-logo.png" id="company-logo"></a>
       <h1>WhatNow..?</h1>
     </div>
     <div class="nav-right">
-      <!-- Right side content if needed -->
+      <!-- Navigation links will be added here dynamically via JavaScript -->
     </div>
   </nav>
 </body>

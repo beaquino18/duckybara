@@ -6,18 +6,15 @@
   --list-clr: #C1D8C3;
   --font-primary: "Yeseva One", serif;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   font-family: var(--font-primary);
 }
-
 nav.navbar {
   background-color: var(--navbar-clr);
   width: 100%;
@@ -25,27 +22,42 @@ nav.navbar {
   align-items: center;
   padding: 10px 20px;
 }
-
 .nav-left {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-right: auto; /* Push everything else to the right */
 }
-
 .nav-right {
   display: flex;
   align-items: center;
 }
-
 #company-logo {
   height: 40px;
   width: auto;
 }
-
 nav h1 {
   color: var(--header-clr);
   margin: 0;
   font-family: var(--font-primary);
   font-size: 1.5rem;
+}
+
+/* New styles for navigation links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: var(--header-clr);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--subheader-clr);
 }

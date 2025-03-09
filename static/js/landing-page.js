@@ -1,29 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const cloudLeft = document.querySelector('#cloud-left');
-  const cloudRight = document.querySelector('#cloud-right');
-  const penguinPlane = document.querySelector('.penguin-plane');
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if the Get Started button exists (on landing page)
+  const getStartedBtn = document.querySelector('.get-started-btn');
   
-  window.addEventListener('scroll', () => {
-    let value = window.scrollY;
-    let scrollSpeed = 0.1;
-    let penguinSpeed = 2;
-    
-    // Move left cloud leftward
-    cloudLeft.style.transform = `translateX(${-value * scrollSpeed}px) translateY(-50%)`;
-    
-    // Move right cloud rightward
-    cloudRight.style.transform = `translateX(${value * scrollSpeed}px) translateY(-50%)`;
-    
-    // Move plane image
-    // penguinPlane.style.transform = `translate(${-value * penguinSpeed}px, -50%)`;
-    // let penguinMovement = Math.min(value * penguinSpeed, maxScroll);
-
-    // Bounds to limit movement
-    if (value * scrollSpeed > 400) {
-        value = 400 / scrollSpeed;
-    }
-  });
+  if (getStartedBtn) {
+      getStartedBtn.addEventListener('click', function() {
+          // Set a flag in localStorage indicating user has started
+          localStorage.setItem('navbarUpdated', 'true');
+          // The actual navigation happens via the link's href
+      });
+  }
+  
+  // Reset navbar on the landing page to ensure it's clean
+  resetNavbar();
 });
 
-
-
+function resetNavbar() {
+  // Get the nav-right div
+  const navRight = document.querySelector('.nav-right');
+  
+  if (navRight) {
+      // Clear the navigation links
+      navRight.innerHTML = '';
+  }
+}
