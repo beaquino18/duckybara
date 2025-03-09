@@ -1,104 +1,217 @@
 @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 
 :root {
-    --font-primary:"Yeseva One", serif;
+  --font-primary: "Yeseva One", serif;
+  --navbar-clr: #DBE7DC;
+  --background-clr: #f5f5f5;
+  --header-clr: #487161;
+  --subheader-clr: #FFA725;
+  --button-clr: #4CAF50;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font-primary);
-    font-weight: 400;
-    font-style: normal;
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #cccaca;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-clr);
+  min-height: 100vh;
 }
 
+/* Main content container */
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-/**
-CSS styling for the main text
- */
+/* Header styling */
 h1 {
-    color: #487161;
-    text-align: center;
+  color: var(--header-clr);
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 h2 {
-    color: #FFA725;
-    text-align: center;
+  color: var(--subheader-clr);
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.2rem;
 }
 
+/* Form styling */
+form {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
 
-/**
-CSS styling for form
- */
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.form-column {
+  flex: 1;
+}
+
 .form-group {
-margin-bottom: 15px;
-}
-label {
-display: block;
-margin-bottom: 5px;
-}
-input, textarea, select {
-width: 100%;
-padding: 8px;
-box-sizing: border-box;
-border: 1px solid #ccc;
-border-radius: 4px;
-}
-select {
-height: 38px;
-background-color: white;
-}
-button {
-background-color: #4CAF50;
-color: white;
-padding: 10px 15px;
-border: none;
-cursor: pointer;
-border-radius: 4px;
-}
-.flash-messages {
-padding: 10px;
-margin-bottom: 20px;
-border-radius: 5px;
-}
-.flash-success {
-background-color: #dff0d8;
-color: #3c763d;
-}
-.flash-error {
-background-color: #f2dede;
-color: #a94442;
-}
-.event-button {
-margin: 5px;
-padding: 10px;
-background-color: lightgray;
-border: none;
-cursor: pointer;
-}
-.selected {
-background-color: lightblue;
-}
-.autocomplete-suggestions {
-border: 1px solid #ccc;
-max-height: 150px;
-overflow-y: auto;
-background-color: white;
-position: absolute;
-z-index: 1000;
-}
-.autocomplete-suggestion {
-padding: 10px;
-cursor: pointer;
-}
-.autocomplete-suggestion:hover {
-background-color: #e9e9e9;
+  margin-bottom: 15px;
 }
 
-/* Remove the age-options styling that's no longer needed */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--header-clr);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+}
+
+select {
+  height: 40px;
+  background-color: white;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Event type buttons */
+.event-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.event-button {
+  margin: 0;
+  padding: 10px 15px;
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-grow: 1;
+}
+
+.event-button:hover {
+  background-color: #ddd;
+}
+
+.selected {
+  background-color: var(--header-clr);
+  color: white;
+}
+
+/* Submit button */
+.submit-btn {
+  background-color: var(--button-clr);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #3e8e41;
+}
+
+/* Links */
+.links {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.links a {
+  color: var(--header-clr);
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Flash messages */
+.flash-messages {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.flash-success {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+.flash-error {
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+/* Autocomplete suggestions */
+.autocomplete-suggestions {
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: white;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+}
+
+.autocomplete-suggestion {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.autocomplete-suggestion:hover {
+  background-color: #e9e9e9;
+}
+
 .location-wrapper {
-position: relative;
-display: inline-block;
-width: 100%;
+  position: relative;
+  width: 100%;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .container {
+    padding: 10px;
+  }
+  
+  form {
+    padding: 15px;
+  }
 }

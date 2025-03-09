@@ -1,60 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Form</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='styles/form.css') }}">
-<script src="{{ url_for('static', filename='js/form.js') }}"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/form.css') }}">
+    <script src="{{ url_for('static', filename='js/form.js') }}"></script>
 </head>
 <body>
-<div>{% include 'navbar.html' %}</div>
-<h1>Tell us about you...</h1>
-<h2>and we’ll match you with activities</h2>
-<form method="POST" action="/">
-<div class="form-group">
-<label for="name">Name:</label>
-<input type="text" id="name" name="name" required>
-</div>
-<div class="form-group">
-<label for="email">Email:</label>
-<input type="email" id="email" name="email" required>
-</div>
-<div class="form-group">
-<label for="location">Location:</label>
-<input type="text" id="location" name="location" required>
-</div>
-<div class="form-group">
-<label for="age">Age Range:</label>
-<select id="age" name="age" required>
-    <option value="" disabled selected>Select your age range</option>
-    <option value="18-22">18 - 22</option>
-    <option value="23-26">23 - 26</option>
-    <option value="27-30">27 - 30</option>
-    <option value="31+">31 and above</option>
-</select>
-</div>
-<div class="form-group">
-<label for="hobbies">Hobbies:</label>
-<textarea id="hobbies" name="hobbies" rows="5" required></textarea>
-</div>
-<div class="form-group">
-<label for="message">Message:</label>
-<textarea id="message" name="message" rows="5" required></textarea>
-</div>
-<div class="form-group">
-<label for="event_type">Event Type:</label><br>
-<button type="button" class="event-button" value="Conference" onclick="toggleSelection(this)">Conference</button>
-<button type="button" class="event-button" value="Workshop" onclick="toggleSelection(this)">Workshop</button>
-<button type="button" class="event-button" value="Meetup" onclick="toggleSelection(this)">Meetup</button><br><br>
-<input type="hidden" id="event_type" name="event_type" required>
-</div>
-<!-- 
-The code snippet below contains a form with a submit button. 
-Please change the link of the submit button to redirect to a new page.
--->
-<button type="submit">Submit</button>
-</form>
-<p><a href="/progress">View Submissions</a></p>
+    <div>{% include 'navbar.html' %}</div>
+    
+    <div class="container">
+        <h1>Tell us about you...</h1>
+        <h2>and we'll match you with activities</h2>
+        
+        <form method="POST" action="/">
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="location">Location:</label>
+                        <input type="text" id="location" name="location" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age">Age Range:</label>
+                        <select id="age" name="age" required>
+                            <option value="" disabled selected>Select your age range</option>
+                            <option value="18-22">18 - 22</option>
+                            <option value="23-26">23 - 26</option>
+                            <option value="27-30">27 - 30</option>
+                            <option value="31+">31 and above</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="hobbies">Hobbies:</label>
+                <textarea id="hobbies" name="hobbies" rows="3" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="3" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="event_type">Event Type:</label>
+                <div class="event-buttons">
+                    <button type="button" class="event-button" value="Conference" onclick="toggleSelection(this)">Conference</button>
+                    <button type="button" class="event-button" value="Workshop" onclick="toggleSelection(this)">Workshop</button>
+                    <button type="button" class="event-button" value="Meetup" onclick="toggleSelection(this)">Meetup</button>
+                </div>
+                <input type="hidden" id="event_type" name="event_type" required>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        
+        <div class="links">
+            <a href="/progress">View Submissions</a>
+        </div>
+    </div>
 </body>
 </html>
