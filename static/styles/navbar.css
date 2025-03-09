@@ -1,0 +1,51 @@
+:root {
+  --navbar-clr: #DBE7DC;
+  --background-clr: #FFF5E4;
+  --header-clr: #487161;
+  --subheader-clr: #FFA725;
+  --list-clr: #C1D8C3;
+  --font-primary: "Yeseva One", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+}
+
+nav.navbar {
+  background-color: var(--navbar-clr);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto; /* Push everything else to the right */
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+#company-logo {
+  height: 40px;
+  width: auto;
+}
+
+nav h1 {
+  color: var(--header-clr);
+  margin: 0;
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+}
